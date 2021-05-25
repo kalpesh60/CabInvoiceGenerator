@@ -11,4 +11,13 @@ public class InvoiceGeneratorTest {
         double fare = invoiceGenerator.calculateFair(distance,time);
         Assertions.assertEquals(35,fare);
     }
+
+    @Test
+    void givenDistanceOrTimeShouldReturnMinimumFair() {
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        double distance = 0.2;
+        int time = 1;
+        double fare = invoiceGenerator.calculateFair(distance,time);
+        Assertions.assertEquals(5,fare);
+    }
 }
